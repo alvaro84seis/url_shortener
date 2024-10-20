@@ -1,9 +1,14 @@
 {
     "build": {
+      "env": {
+        "JAVA_OPTS": "-Xmx512m"
+      },
       "dockerfile": "Dockerfile",
-      "context": "."
+      "docker": {
+        "context": "."
+      }
     },
     "start": {
-      "command": "java -jar target/demo-0.0.1-SNAPSHOT.jar"
+      "command": "java -Dserver.port=$PORT $JAVA_OPTS -jar target/demo-0.0.1-SNAPSHOT.jar"
     }
   }
