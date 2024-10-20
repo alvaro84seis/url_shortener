@@ -22,7 +22,7 @@ public class UrlShortenerService {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
     
-    private final String BASE_URL = "http://localhost:8080/api/url/";
+    private final String BASE_URL = "https://ample-happiness-production.up.railway.app/api/url/";
 
     public String shortenUrl(UrlRequest urlRequest) {
         String uniqueID = generateShortUrl();
